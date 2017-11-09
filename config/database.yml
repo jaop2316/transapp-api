@@ -14,17 +14,13 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: root
-  host: localhost
+  password: politecnica2316
+  socket: /var/run/mysqld/mysqld.sock
 
 development:
-  adapter: mysql2
-  encoding: utf8
+  <<: *default
   database: transapp-hasmany-api_development
-  username: root
-  password: root
-  host: 127.0.0.1
-  port: 8889
+  
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
