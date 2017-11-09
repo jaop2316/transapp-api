@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get     "/stations",     to: "api_stations#stationsXroutes"
       get     "/places",       to: "api_places#placesXroutes"
       get     "/categories",   to: "api_categories#categoriesList"
+      get     "/routes",   to: "api_routes#routesList"
     end
   end
 

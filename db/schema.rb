@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108162429) do
+ActiveRecord::Schema.define(version: 20171109164600) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -38,6 +38,18 @@ ActiveRecord::Schema.define(version: 20171108162429) do
     t.string "observations"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "flotaLV"
+    t.string "horaLV"
+    t.string "interLVP"
+    t.integer "flotaS"
+    t.string "horaS"
+    t.string "interSP"
+    t.string "interSN"
+    t.integer "flotaDF"
+    t.string "horaDF"
+    t.string "interDFP"
+    t.string "interDFN"
+    t.string "interLVN"
   end
 
   create_table "stationroutes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
