@@ -12,7 +12,8 @@ class Api::V1::ApiStationsController < ApplicationController
       @stations_routes_list = Stationroute.select("name").joins(:route ).where({station_id: station.id})
       @result << {
           cod: station.id,
-          nombre: station.name,
+          nomParada: station.name,
+          url: URI.join(request.url, station.image.url),
           latitud:station.latitude,
           longitud:station.longitude,
           rutas: @stations_routes_list,
