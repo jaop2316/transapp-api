@@ -21,7 +21,7 @@ class Api::V1::ApiRoutesController < ApplicationController
           interDFP: route.interDFP,
           interDFN: route.interDFN,
           observaciones: route.observations,
-          sitios:@places_routes_list
+          sitios:@places_routes_list.map { |c| c.name }
 
       }
     end
