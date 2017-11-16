@@ -11,7 +11,7 @@ class Api::V1::ApiCategoriesController < ApplicationController
       @places_routes_list = Placeroute.select("name").joins(:route).where({place_id: category.places.select(:id)})
       @result << {
           nombreCategoria: category.name,
-          items: [{ nombreSitio: category.places.select(:name), rutas:@places_routes_list}]
+          items: [{ nombreSitio: category.places.select(:name), rutas:@places_routes_list.map { |c| c.name }}]
       }
     end
 
