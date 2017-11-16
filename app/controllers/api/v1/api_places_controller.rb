@@ -4,23 +4,18 @@ class Api::V1::ApiPlacesController < ApplicationController
 
   def placesXroutes
 
-    #@categories = Category.all
     @places = Place.all
-    @places_group = @places.group_by {|t| t.category_id }
-    #@places_group = Place.group(:category_id)
     @result = Array.new
 
-    @places_group.each do |category_id, places|
-        @result << {
-            categoria: category_id,
-            items: [{ name: places.each{ |x| print  x.name },
-                      #routes:@places_routes_list
-                    }]
+    @places.each do |place|
+      @placesXroutes= Placeroute.select(:name).joins(:route).where(place_id: place.id)
+      @result <<{
+          nombreSitio:place.name,
+          rutas: @placesXroutes.map { |c| c.name }
 
+      }
+    end
 
-        }
-
-     end
 
     respond_to do |format|
       format.json { render json: @result }

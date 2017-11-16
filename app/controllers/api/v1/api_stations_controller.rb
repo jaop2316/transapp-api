@@ -16,7 +16,7 @@ class Api::V1::ApiStationsController < ApplicationController
           url: URI.join(request.url, station.image.url),
           latitud:station.latitude,
           longitud:station.longitude,
-          rutas: @stations_routes_list,
+          rutas: @stations_routes_list.map { |c| c.name },
       }
     end
 

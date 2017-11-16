@@ -7,12 +7,11 @@ class Api::V1::ApiCategoriesController < ApplicationController
 
     @categories.each do |category|
       @category_places = category.places.select(:name)
+      @places = category.places.where({category_id:category.id})
       @places_routes_list = Placeroute.select("name").joins(:route).where({place_id: category.places.select(:id)})
-      #@items = category.places+@places_routes_list
       @result << {
           nombreCategoria: category.name,
-          items: category.places.select(:name)
-          #rutas: @places_routes_list
+          items: [{ nombreSitio: category.places.select(:name), rutas:@places_routes_list}]
       }
     end
 
