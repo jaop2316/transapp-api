@@ -6,6 +6,7 @@ class Api::V1::ApiRoutesController < ApplicationController
 
     @routes.each do |route|
       @places_routes_list = Placeroute.select("name").joins(:place ).where({route_id: route.id})
+      @ways_routes = route.name.split('-')
       @result << {
           nombreRuta: route.name,
           flotaLV: route.flotaLV,
@@ -20,7 +21,8 @@ class Api::V1::ApiRoutesController < ApplicationController
           horaDF: route.horaDF,
           interDFP: route.interDFP,
           interDFN: route.interDFN,
-          observaciones: route.observations,
+          Observaciones: route.observations,
+          items:[{sentido1:@ways_routes[0] ,sentido2:@ways_routes[1]}],
           sitios:@places_routes_list.map { |c| c.name }
 
       }
