@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-    <div class="field">
+    <div class="form-group">
       <%= form.label :image %>
-      <%= form.file_field :image, id: :image %>
+      <%= form.file_field :image, id: :image, :class => 'form-control'%>
     </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :station_name %>
+    <%= form.text_field :name, id: :station_name, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :latitude %>
-    <%= form.text_field :latitude, id: :station_latitude %>
+    <%= form.text_field :latitude, id: :station_latitude, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :longitude %>
-    <%= form.text_field :longitude, id: :station_longitude %>
+    <%= form.text_field :longitude, id: :station_longitude, :class => 'form-control'%>
   </div>
 
     <div class="field">
@@ -37,6 +37,6 @@
     </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class => 'btn btn-primary'%>
   </div>
 <% end %>

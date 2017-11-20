@@ -58,3 +58,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #CORS CONFIGURATION
 gem 'rack-cors', :require => 'rack/cors'
+
+#bootstrap gem in rails
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
+#jquery
+
+gem 'jquery-rails'

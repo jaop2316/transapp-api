@@ -11,77 +11,117 @@
         </div>
     <% end %>
 
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name, id: :route_name %>
+    <div class="form-group">
+      <%= form.label :Nombre %>
+      <%= form.text_field :name, id: :route_name, :class => 'form-control' %>
     </div>
 
-    <div class="field">
-      <%= form.label :observations %>
-      <%= form.text_field :observations, id: :route_observations %>
+    <div class="form-group">
+      <%= form.label :Observaciones %>
+      <%= form.text_field :observations, id: :route_observations, :class => 'form-control' %>
     </div>
 
-    <div class="field">
-      <%= form.label :flotaLV %>
-      <%= form.text_field :flotaLV, id: :flotaLV %>
-    </div>
+    <fieldset>
+      <legend>Horarios de Lunes a Viernes</legend>
+      <div class="row">
+        <div class="col-md-3 col-xs-12">
+          <div class="form-group">
+            <%= form.label :Flota %>
+            <%= form.text_field :flotaLV, id: :flotaLV, :class => 'form-control' %>
+          </div>
+        </div>
 
-    <div class="field">
-      <%= form.label :horaLV %>
-      <%= form.text_field :horaLV, id: :horaLV %>
-    </div>
+        <div class="col-md-3 col-xs-12">
+          <div class="form-group">
+            <%= form.label :Horas %>
+            <%= form.text_field :horaLV, id: :horaLV, :class => 'form-control' %>
+          </div>
+        </div>
 
-    <div class="field">
-      <%= form.label :interLVP %>
-      <%= form.text_field :interLVP, id: :interLVP %>
-    </div>
 
-    <div class="field">
-      <%= form.label :interLVN %>
-      <%= form.text_field :interLVN, id: :interLVN %>
-    </div>
+        <div class="col-md-3 col-xs-12">
+          <div class="form-group">
+            <%= form.label :IntervaloPico %>
+            <%= form.text_field :interLVP, id: :interLVP, :class => 'form-control' %>
+          </div>
+        </div>
 
-    <div class="field">
-      <%= form.label :flotaS %>
-      <%= form.text_field :flotaS, id: :flotaS %>
-    </div>
+        <div class="col-md-3 col-xs-12">
+          <div class="form-group">
+            <%= form.label :IntervaloNormal %>
+            <%= form.text_field :interLVN, id: :interLVN, :class => 'form-control' %>
+          </div>
+        </div>
+      </div>
+    </fieldset>
 
-    <div class="field">
-      <%= form.label :horaS %>
-      <%= form.text_field :horaS, id: :horaS %>
-    </div>
+    <fieldset>
+      <legend>Horarios Sabado</legend>
+      <div class="row">
+        <div class="col-md-3 col-xs-12">
+          <div class="form-group">
+            <%= form.label :flotaS %>
+            <%= form.text_field :flotaS, id: :flotaS, :class => 'form-control' %>
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+          <div class="form-group">
+            <%= form.label :horaS %>
+            <%= form.text_field :horaS, id: :horaS, :class => 'form-control' %>
+          </div>
+        </div>
 
-    <div class="field">
-      <%= form.label :interSP %>
-      <%= form.text_field :interSP, id: :interSP %>
-    </div>
+        <div class="col-md-3 col-xs-12">
+          <div class="form-group">
+            <%= form.label :interSP %>
+            <%= form.text_field :interSP, id: :interSP, :class => 'form-control' %>
+          </div>
+        </div>
 
-    <div class="field">
-      <%= form.label :interSN %>
-      <%= form.text_field :interSN, id: :interSN %>
-    </div>
+        <div class="col-md-3 col-xs-12">
+          <div class="form-group">
+            <%= form.label :interSN %>
+            <%= form.text_field :interSN, id: :interSN, :class => 'form-control' %>
+          </div>
+        </div>
+      </div>
+    </fieldset>
 
-    <div class="field">
-      <%= form.label :flotaDF %>
-      <%= form.text_field :flotaDF, id: :flotaDF %>
-    </div>
+    <fieldset>
+      <legend>Horarios Domingos y Feriados</legend>
+    <div class="row">
+      <div class="col-md-3 col-xs-12">
+        <div class="form-group">
+          <%= form.label :flotaDF %>
+          <%= form.text_field :flotaDF, id: :flotaDF, :class => 'form-control' %>
+        </div>
+      </div>
 
-    <div class="field">
-      <%= form.label :horaDF %>
-      <%= form.text_field :horaDF, id: :horaDF %>
-    </div>
+      <div class="col-md-3 col-xs-12">
+        <div class="form-group">
+          <%= form.label :horaDF %>
+          <%= form.text_field :horaDF, id: :horaDF, :class => 'form-control' %>
+        </div>
+      </div>
 
-    <div class="field">
-      <%= form.label :interDFP %>
-      <%= form.text_field :interDFP, id: :interDFP %>
-    </div>
+      <div class="col-md-3 col-xs-12">
+        <div class="form-group">
+          <%= form.label :interDFP %>
+          <%= form.text_field :interDFP, id: :interDFP, :class => 'form-control' %>
+        </div>
+      </div>
 
-    <div class="field">
-      <%= form.label :interDFN %>
-      <%= form.text_field :interDFN, id: :interDFN %>
+      <div class="col-md-3 col-xs-12">
+        <div class="form-group">
+          <%= form.label :interDFN %>
+          <%= form.text_field :interDFN, id: :interDFN, :class => 'form-control' %>
+        </div>
+      </div>
     </div>
+    </fieldset>
+
 
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit :class => 'btn btn-primary' %>
     </div>
 <% end %>
