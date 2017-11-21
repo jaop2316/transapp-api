@@ -16,4 +16,22 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-console.log("tes js");
+$(document).ready(function () {
+    function doScroll(elem) {
+        $(elem).click(function (e) {
+            e.preventDefault();
+            var dtop = $(window).width() < 768 ? 55 : 1;
+            var target = $(elem).attr('href').replace('/', '#');
+            console.log(target)
+            $('html, body').animate({scrollTop: $(target).offset().top - dtop}, 800);
+        });
+    }
+
+    $('.nav-pills > li > a').each(function () {
+        doScroll(this)
+    });
+
+    $('.lead .btn-primary').each(function(){
+        doScroll(this)
+    });
+});
