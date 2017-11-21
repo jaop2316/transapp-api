@@ -1,29 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Image</strong>
-  <%= image_tag @station.image.url %>
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <h1>
+      <%= @station.name %>
+    </h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @station.name %>
-</p>
+    <p>
+      <%= image_tag @station.image.url %>
+    </p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @station.latitude %>
-</p>
+    <fieldset>
+      <legend> Informacion General</legend>
+      <p>
+        <strong>Latitude:</strong>
+        <%= @station.latitude %>
+      </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @station.longitude %>
-</p>
+      <p>
+        <strong>Longitude:</strong>
+        <%= @station.longitude %>
+      </p>
 
-<p>
-  <strong>Routes:</strong>
-  <%= collection_select(:routes, :id,  @stations_routes_list, :id, :name, {}, {:multiple => true}) %>
-</p>
+      <p>
+        <strong>Routes:</strong>
+        <%= collection_select(:routes, :id, @stations_routes_list, :id, :name, {}, {:multiple => true}) %>
+      </p>
+    </fieldset>
+  </div>
+</div>
+
 
 <%= link_to 'Edit', edit_station_path(@station) %> |
 <%= link_to 'Back', stations_path %>

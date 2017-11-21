@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   resources :places
   resources :categories
   resources :stations
   resources :routes
+
+  # Set a index page
+
+  root 'welcome#index'
+  get   'welcome/index'
 
   #Configuration for generate JSON files from API
   namespace :api, defaults:{ format: :json } do
