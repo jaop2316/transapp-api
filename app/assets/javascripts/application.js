@@ -27,9 +27,9 @@ $(document).ready(function () {
         });
     }
 
-    $('.nav-pills > li > a').each(function () {
+    /*$('.nav-pills > li > a').each(function () {
         doScroll(this)
-    });
+    });*/
 
     $('.lead .btn-primary').each(function(){
         doScroll(this)

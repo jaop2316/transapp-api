@@ -16,26 +16,35 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 
-
 /* Base Styles
 body
- background-color: #334455
- color: #fff
+  background-color: #334455
+  color: #fff
+
 a
- color: #ffbb33
- &:visited
-   color: #ffbb33 !important
+  color: #ffbb33
+  &:visited
+    color: #ffbb33 !important
+  &:hover
+    background-color: transparent
+    color: #ffffff
+    text-decoration: underline
 
 .main-banner
   background-color: #fff
   margin-top: 86px
+
 legend
   color: #ffbb33
+
 h1
   color: #ffbb33
 
 .title-page
   text-align: center
+
+.container
+  margin-top: 100px
 
 /* Custom styles
 header
@@ -51,6 +60,8 @@ header
 .navbar-brand
   padding: 0
   margin: 0
+  &:hover
+    background-color: transparent
 
 .nav-pills
   float: right
@@ -86,10 +97,10 @@ header
 .banner-left
   display: table
   height: 780px
+
 .banner-right
   .img-responsive
     margin: 0 auto
-
 
 /*routes styles
 .routes
