@@ -16,11 +16,6 @@
       <%= form.text_field :name, id: :route_name, :class => 'form-control' %>
     </div>
 
-    <div class="form-group">
-      <%= form.label :Observaciones %>
-      <%= form.text_field :observations, id: :route_observations, :class => 'form-control' %>
-    </div>
-
     <fieldset>
       <legend>Horarios de Lunes a Viernes</legend>
       <div class="row">
@@ -89,36 +84,41 @@
 
     <fieldset>
       <legend>Horarios Domingos y Feriados</legend>
-    <div class="row">
-      <div class="col-md-3 col-xs-12">
-        <div class="form-group">
-          <%= form.label :flotaDF %>
-          <%= form.text_field :flotaDF, id: :flotaDF, :class => 'form-control' %>
+      <div class="row">
+        <div class="col-md-3 col-xs-12">
+          <div class="form-group">
+            <%= form.label :flotaDF %>
+            <%= form.text_field :flotaDF, id: :flotaDF, :class => 'form-control' %>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3 col-xs-12">
-        <div class="form-group">
-          <%= form.label :horaDF %>
-          <%= form.text_field :horaDF, id: :horaDF, :class => 'form-control' %>
+        <div class="col-md-3 col-xs-12">
+          <div class="form-group">
+            <%= form.label :horaDF %>
+            <%= form.text_field :horaDF, id: :horaDF, :class => 'form-control' %>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3 col-xs-12">
-        <div class="form-group">
-          <%= form.label :interDFP %>
-          <%= form.text_field :interDFP, id: :interDFP, :class => 'form-control' %>
+        <div class="col-md-3 col-xs-12">
+          <div class="form-group">
+            <%= form.label :interDFP %>
+            <%= form.text_field :interDFP, id: :interDFP, :class => 'form-control' %>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-3 col-xs-12">
-        <div class="form-group">
-          <%= form.label :interDFN %>
-          <%= form.text_field :interDFN, id: :interDFN, :class => 'form-control' %>
+        <div class="col-md-3 col-xs-12">
+          <div class="form-group">
+            <%= form.label :interDFN %>
+            <%= form.text_field :interDFN, id: :interDFN, :class => 'form-control' %>
+          </div>
         </div>
       </div>
-    </div>
     </fieldset>
+
+    <div class="form-group">
+      <%= form.label :Observaciones %>
+      <%= form.text_field :observations, id: :route_observations, :class => 'form-control' %>
+    </div>
 
 
     <div class="actions">

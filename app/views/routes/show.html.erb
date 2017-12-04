@@ -1,95 +1,97 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @route.name %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Observations:</strong>
-  <%= @route.observations %>
-</p>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="title-page">
+        <%= @route.name %>
+      </h1>
+    </div>
+  </div>
 
-<p>
-  <strong>Flota de Lunes a Viernes</strong>
-  <%= @route.flotaLV %>
-</p>
+  <div class="row">
+    <div class="col-md-12">
+      <fieldset>
+        <legend>Horarios</legend>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Dias</th>
+            <th>Horario</th>
+            <th>Buses</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Lunes - Viernes</td>
+            <td><%= @route.horaLV %></td>
+            <td><%= @route.flotaLV %></td>
+          </tr>
+          <tr>
+            <td>Sabado</td>
+            <td><%= @route.horaS %></td>
+            <td><%= @route.flotaS %></td>
+          </tr>
+          <tr>
+            <td>Domingo y Feriados</td>
+            <td><%= @route.horaDF %></td>
+            <td><%= @route.flotaDF %></td>
+          </tr>
+          </tbody>
+        </table>
+      </fieldset>
+    </div>
+  </div>
 
-<p>
-  <strong>Horario Lunes a Viernes</strong>
-  <%= @route.horaLV %>
-</p>
+  <div class="row">
+    <div class="col-md-12">
+      <fieldset>
+        <legend>Intervalos de llegada</legend>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Dias</th>
+            <th>Horas Pico</th>
+            <th>Normal</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Lunes - Viernes</td>
+            <td><%= @route.interLVP %></td>
+            <td><%= @route.interLVN %></td>
+          </tr>
+          <tr>
+            <td>Sabado</td>
+            <td><%= @route.interSP %></td>
+            <td><%= @route.interSN %></td>
+          </tr>
+          <tr>
+            <td>Domingo y Feriados</td>
+            <td><%= @route.interDFP %></td>
+            <td><%= @route.interDFN %></td>
+          </tr>
+          </tbody>
+        </table>
+      </fieldset>
+    </div>
+  </div>
 
-<p>
-  <strong>Intervalo hora pico Lunes a Viernes</strong>
-  <%= @route.interLVP %>
-</p>
-
-<p>
-  <strong>Intervalo horario normal Lunes a Viernes</strong>
-  <%= @route.interLVN %>
-</p>
-
-<p>
-  <strong>Flota Sabado</strong>
-  <%= @route.flotaS %>
-</p>
-
-<p>
-  <strong>Horario Lunes a Viernes</strong>
-  <%= @route.horaS %>
-</p>
-
-<p>
-  <strong>Intervalo hora pico Lunes a Viernes</strong>
-  <%= @route.interSP %>
-</p>
-
-<p>
-  <strong>Intervalo horario normal Lunes a Viernes</strong>
-  <%= @route.interSN %>
-</p>
-
-<p>
-  <strong>Flota Sabado</strong>
-  <%= @route.flotaS %>
-</p>
-
-<p>
-  <strong>Horario Lunes a Viernes</strong>
-  <%= @route.horaS %>
-</p>
-
-<p>
-  <strong>Intervalo hora pico Lunes a Viernes</strong>
-  <%= @route.interSP %>
-</p>
-
-<p>
-  <strong>Intervalo horario normal Lunes a Viernes</strong>
-  <%= @route.interSN %>
-</p>
-
-<p>
-  <strong>Flota Domingos y Feriados</strong>
-  <%= @route.flotaDF %>
-</p>
-
-<p>
-  <strong>Horario Domingos y Feriados</strong>
-  <%= @route.horaDF %>
-</p>
-
-<p>
-  <strong>Intervalo hora pico Lunes a Viernes</strong>
-  <%= @route.interDFP %>
-</p>
-
-<p>
-  <strong>Intervalo horario normal Lunes a Viernes</strong>
-  <%= @route.interDFN %>
-</p>
+  <div class="row">
+    <div class="col-md-12">
+      <fieldset>
+        <legend>Observaciones</legend>
+        <p>
+          <%= @route.observations %>
+        </p>
+      </fieldset>
+    </div>
+  </div>
 
 
-<%= link_to 'Edit', edit_route_path(@route) %> |
-<%= link_to 'Back', routes_path %>
+
+
+  <%= link_to 'Edit', edit_route_path(@route) %> |
+  <%= link_to 'Back', routes_path %>
+</div>
