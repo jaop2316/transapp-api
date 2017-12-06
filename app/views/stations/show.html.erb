@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
+<div class="container stations-detail-page">
   <div class="row">
     <div class="col-md-12">
       <h1 class="title-page">
@@ -8,25 +8,28 @@
       </h1>
 
       <p>
-        <%= image_tag @station.image.url %>
+        <%= image_tag @station.image.url(:medium) %>
       </p>
 
       <fieldset>
         <legend> Informacion General</legend>
         <p>
-          <strong>Latitude:</strong>
+          <strong>Latitud:</strong>
           <%= @station.latitude %>
         </p>
 
         <p>
-          <strong>Longitude:</strong>
+          <strong>Longitud:</strong>
           <%= @station.longitude %>
         </p>
 
-        <p>
-          <strong>Routes:</strong>
-          <%= collection_select(:routes, :id, @stations_routes_list, :id, :name, {}, {:multiple => true}) %>
-        </p>
+
+        <strong>Rutas:</strong>
+        <ol>
+          <%= @stations_routes_list.compact.each do |element| %>
+              <li><%= element.name %></li>
+          <% end %>
+        </ol>
 
         <%= link_to 'Edit', edit_station_path(@station) %> |
         <%= link_to 'Back', stations_path %>

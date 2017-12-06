@@ -12,8 +12,12 @@
   </p>
 
   <p>
-    <strong>Routes:</strong>
-    <%= collection_select(:routes, :id, @places_routes_list, :id, :name, {}, {:multiple => true}) %>
+    <strong>Rutas:</strong>
+  <ol>
+    <%= @places_routes_list.each do |element| %>
+        <li><%= element.name %></li>
+    <% end %>
+  </ol>
   </p>
 
   <%= link_to 'Edit', edit_place_path(@place) %> |

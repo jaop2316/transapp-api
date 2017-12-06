@@ -55,6 +55,8 @@ header
   right: 0
   left: 0
   z-index: 1030
+  &.header-white
+    background-color: #ffffff
 /* NavBar Homepage
 
 .navbar-brand
@@ -79,6 +81,14 @@ header
     background-color: transparent
     color: #ffffff
     text-decoration: underline
+
+.blue-links
+  li > a
+    color: #334455
+    &:hover
+      background-color: transparent
+      color: #ffbb33
+      text-decoration: underline
 
 .nopadding
   padding-left: 0
@@ -173,3 +183,8 @@ header
   background-color: #fff
   color: #334455
   text-align: center
+
+/* Stations detail page styles
+
+.stations-detail-page .img-responsive
+  margin: 0 auto
