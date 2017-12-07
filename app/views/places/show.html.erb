@@ -1,33 +1,39 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @place.name %>
-  </p>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="title-page">
+        <%= @place.name %>
+      </h1>
+      <fieldset>
+        <legend>Información General</legend>
+        <p>
+          <strong>Categoria:</strong>
+          <%= @place.category.name %>
+        </p>
 
-  <p>
-    <strong>Category:</strong>
-    <%= @place.category.name %>
-  </p>
+        <p>
+          <strong>Rutas:</strong>
+        <ol>
+          <% @places_routes_list.each do |element| %>
+              <li><%= element.name %></li>
+          <% end %>
+        </ol>
+        </p>
+      </fieldset>
 
-  <p>
-    <strong>Rutas:</strong>
-  <ol>
-    <% @places_routes_list.each do |element| %>
-        <li><%= element.name %></li>
-    <% end %>
-  </ol>
-  </p>
+      <%= link_to edit_place_path(@place) do %>
+          <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="eliminar"></span>
+          Editar
+      <% end %>
+      |
+      <%= link_to places_path do %>
+          <span class="glyphicon glyphicon-arrow-left" data-toggle="tooltip" title="eliminar"></span>
+          Lugares
+      <% end %>
+    </div>
+  </div>
 
-  <%= link_to edit_place_path(@place) do %>
-      <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="eliminar"></span>
-      Editar
-  <% end %>
-  |
-  <%= link_to places_path do %>
-      <span class="glyphicon glyphicon-arrow-left" data-toggle="tooltip" title="eliminar"></span>
-      Lugares
-  <% end %>
 </div>
 

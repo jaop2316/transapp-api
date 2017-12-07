@@ -23,7 +23,7 @@ $(document).ready(function () {
             var dtop = $(window).width() < 768 ? 55 : 1;
             var target = $(elem).attr('href').replace('/', '#');
             console.log(target)
-            $('html, body').animate({scrollTop: $(target).offset().top - dtop}, 800);
+            $('html, body').animate({scrollTop: $(target).offset().top-98}, 800);
         });
     }
 
