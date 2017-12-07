@@ -83,5 +83,22 @@ $(document).ready(function () {
 
     });*/
 
+    var scroll_start = 0;
+    var startchange = $('.routes');
+    var offset = startchange.offset();
+
+    if (startchange.length) {
+        $(window).scroll(function () {
+            scroll_start = $(this).scrollTop();
+            if (scroll_start > offset.top) {
+                $('header').addClass('header-white');
+                $('header .nav-pills').addClass('blue-links');
+            } else {
+                $('header').removeClass('header-white');
+                $('header .nav-pills').removeClass('blue-links');
+            }
+        });
+    }
+
 
 });
