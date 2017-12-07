@@ -20,7 +20,14 @@
   </ol>
   </p>
 
-  <%= link_to 'Edit', edit_place_path(@place) %> |
-  <%= link_to 'Back', places_path %>
+  <%= link_to edit_place_path(@place) do %>
+      <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="eliminar"></span>
+      Editar
+  <% end %>
+  |
+  <%= link_to places_path do %>
+      <span class="glyphicon glyphicon-arrow-left" data-toggle="tooltip" title="eliminar"></span>
+      Lugares
+  <% end %>
 </div>
 

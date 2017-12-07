@@ -1,8 +1,11 @@
 <div class="container detail-page">
-  <h1>Nuevo Lugar</h1>
+  <h1>Nuevo Sitio de Interes</h1>
 
   <%= render 'form', place: @place %>
 
-  <%= link_to 'Back', places_path %>
+  <%= link_to places_path do %>
+      <span class="glyphicon glyphicon-arrow-left" data-toggle="tooltip" title="eliminar"></span>
+      Lugares
+  <% end %>
 
 </div>

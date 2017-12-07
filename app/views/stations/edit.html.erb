@@ -3,7 +3,13 @@
 
   <%= render 'form', station: @station %>
 
-  <%= link_to 'Show', @station %> |
-  <%= link_to 'Back', stations_path %>
+  <%= link_to station_path(@station) do %>
+      <span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="show"></span>
+      Ver
+  <% end %> |
+  <%= link_to stations_path do %>
+      <span class="glyphicon glyphicon-arrow-left" data-toggle="tooltip" title="eliminar"></span>
+      Paradas
+  <% end %>
 </div>
 

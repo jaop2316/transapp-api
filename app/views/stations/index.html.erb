@@ -41,5 +41,8 @@
 
   <br>
 
-  <%= link_to 'Agregar Parada', new_station_path %>
+  <%= link_to new_station_path do %>
+      <span class="glyphicon glyphicon-plus" data-toggle="tooltip" title="eliminar"></span>
+      Nueva Parada
+  <% end %>
 </div>

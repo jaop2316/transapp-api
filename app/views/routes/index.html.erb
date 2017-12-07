@@ -39,5 +39,8 @@
 
   <br>
 
-  <%= link_to 'Agregar Ruta', new_route_path %>
+  <%= link_to new_route_path do %>
+      <span class="glyphicon glyphicon-plus" data-toggle="tooltip" title="eliminar"></span>
+      Nueva Ruta
+  <% end %>
 </div>

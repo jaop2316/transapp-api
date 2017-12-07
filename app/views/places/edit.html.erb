@@ -3,7 +3,13 @@
 
   <%= render 'form', place: @place %>
 
-  <%= link_to 'Show', @place %> |
-  <%= link_to 'Back', places_path %>
+  <%= link_to place_path(@place) do %>
+      <span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="show"></span>
+      Ver
+  <% end %> |
+  <%= link_to places_path do %>
+      <span class="glyphicon glyphicon-arrow-left" data-toggle="tooltip" title="eliminar"></span>
+      Lugares
+  <% end %>
 
 </div>

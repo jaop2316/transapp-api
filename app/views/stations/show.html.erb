@@ -31,8 +31,15 @@
           <% end %>
         </ol>
 
-        <%= link_to 'Edit', edit_station_path(@station) %> |
-        <%= link_to 'Back', stations_path %>
+        <%= link_to edit_station_path(@station) do %>
+            <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="eliminar"></span>
+            Editar
+        <% end %>
+        |
+        <%= link_to stations_path do %>
+            <span class="glyphicon glyphicon-arrow-left" data-toggle="tooltip" title="eliminar"></span>
+            Paradas
+        <% end %>
 
       </fieldset>
     </div>

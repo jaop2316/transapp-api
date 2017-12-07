@@ -89,9 +89,13 @@
     </div>
   </div>
 
-
-
-
-  <%= link_to 'Edit', edit_route_path(@route) %> |
-  <%= link_to 'Back', routes_path %>
+  <%= link_to edit_route_path(@route) do %>
+      <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="eliminar"></span>
+      Editar
+  <% end %>
+  |
+  <%= link_to routes_path do %>
+      <span class="glyphicon glyphicon-arrow-left" data-toggle="tooltip" title="eliminar"></span>
+      Rutas
+  <% end %>
 </div>

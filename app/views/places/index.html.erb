@@ -38,6 +38,8 @@
   </table>
 
   <br>
-
-  <%= link_to 'Agregar Sitio', new_place_path %>
+  <%= link_to new_place_path do %>
+      <span class="glyphicon glyphicon-plus" data-toggle="tooltip" title="eliminar"></span>
+      Nuevo Sitio de Interes
+  <% end %>
 </div>
