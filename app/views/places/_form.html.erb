@@ -18,7 +18,7 @@
 
     <div class="form-group">
       <%= form.label :Categoria %>
-      <%= form.collection_select(:category_id, @all_categories, :id, :name, prompt: true ) %>
+      <%= form.collection_select(:category_id, @all_categories, :id, :name, {:prompt=>true}, :class => 'form-control' ) %>
     </div>
 
     <div class="form-group">

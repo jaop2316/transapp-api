@@ -10,7 +10,8 @@ class StationsController < ApplicationController
   # GET /stations/1
   # GET /stations/1.json
   def show
-    @stations_routes_list = Stationroute.select("name").joins(:route ).where({station_id: @station.id})
+    @stations_routes_list = Stationroute.select("name").joins(:route ).where({station_id: @station.id} )
+    @stations_routes_list_compact = @stations_routes_list.map { |c| c.name }
   end
 
   # GET /stations/new
