@@ -17,9 +17,21 @@
         <tr>
           <td><%= route.name %></td>
           <td><%= route.observations %></td>
-          <td><%= link_to 'Show', route %></td>
-          <td><%= link_to 'Edit', edit_route_path(route) %></td>
-          <td><%= link_to 'Destroy', route, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          <td><%= link_to route_path(route) do %>
+                <span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="eliminar"></span>
+                Ver
+            <% end %>
+          </td>
+          <td><%= link_to edit_route_path(route) do %>
+                <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="editar"></span>
+                Editar
+            <% end %>
+          </td>
+          <td><%= link_to route_path(route), method: :delete, data: {confirm: 'Esta seguro?'} do %>
+                <span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title="eliminar"></span>
+                Eliminar
+            <% end %>
+          </td>
         </tr>
     <% end %>
     </tbody>
@@ -27,5 +39,5 @@
 
   <br>
 
-  <%= link_to 'New Route', new_route_path %>
+  <%= link_to 'Agregar Ruta', new_route_path %>
 </div>

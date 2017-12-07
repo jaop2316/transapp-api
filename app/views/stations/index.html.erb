@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container detail-page">
   <p id="notice"><%= notice %></p>
 
   <h1 class="title-page">Paradas</h1>
@@ -19,9 +19,21 @@
           <td><%= station.name %></td>
           <td><%= station.latitude %></td>
           <td><%= station.longitude %></td>
-          <td><%= link_to 'Show', station %></td>
-          <td><%= link_to 'Edit', edit_station_path(station) %></td>
-          <td><%= link_to 'Destroy', station, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          <td><%= link_to station_path(station) do %>
+                <span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="show"></span>
+                Ver
+            <% end %>
+          </td>
+          <td><%= link_to edit_station_path(station) do %>
+                <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="editar"></span>
+                Editar
+            <% end %>
+          </td>
+          <td><%= link_to station_path(station), method: :delete, data: {confirm: 'Esta seguro?'} do %>
+                <span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title="eliminar"></span>
+                Eliminar
+            <% end %>
+          </td>
         </tr>
     <% end %>
     </tbody>
@@ -29,5 +41,5 @@
 
   <br>
 
-  <%= link_to 'New Station', new_station_path %>
+  <%= link_to 'Agregar Parada', new_station_path %>
 </div>
