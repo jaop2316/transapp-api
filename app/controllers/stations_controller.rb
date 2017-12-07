@@ -53,6 +53,13 @@ class StationsController < ApplicationController
   # PATCH/PUT /stations/1
   # PATCH/PUT /stations/1.json
   def update
+
+    params[:routes][:ids].each do |route|
+      if !route.empty?
+        @station.stationroutes.build(:route_id => route)
+      end
+    end
+
     respond_to do |format|
       if @station.update(station_params)
         format.html { redirect_to @station, notice: 'Station was successfully updated.' }
