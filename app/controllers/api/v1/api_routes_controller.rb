@@ -4,8 +4,14 @@ class Api::V1::ApiRoutesController < ApplicationController
 
     @result = Array.new
 
+    def categoryName(id)
+      @nameCategory = Category.find(id)
+      @singlecategory= @nameCategory.name
+    end
+
     @routes.each do |route|
-      @places_routes_list = Placeroute.select("name").joins(:place ).where({route_id: route.id})
+      @places_routes_list = Placeroute.select("name", "category_id").joins(:place).where({route_id: route.id})
+      @places_routes_category_list = Placeroute.select("category_id").joins(:place).where({route_id: route.id})
       @ways_routes = route.name.split('-')
       @result << {
           nombreRuta: route.name,
@@ -22,8 +28,8 @@ class Api::V1::ApiRoutesController < ApplicationController
           interDFP: route.interDFP,
           interDFN: route.interDFN,
           Observaciones: route.observations,
-          items:[{sentido1:@ways_routes[0] ,sentido2:@ways_routes[1]}],
-          sitios:@places_routes_list.map { |c| c.name }
+          items: [{sentido1: @ways_routes[0], sentido2: @ways_routes[1]}],
+          sitios: @places_routes_list.map {|c| [nombre: c.name, categoria: categoryName(c.category_id)]},
 
       }
     end
