@@ -67,3 +67,6 @@ gem 'autoprefixer-rails'
 #jquery
 
 gem 'jquery-rails'
+
+#devise gem
+gem 'devise'
