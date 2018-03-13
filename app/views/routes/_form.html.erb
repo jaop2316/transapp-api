@@ -122,6 +122,6 @@
 
 
     <div class="actions">
-      <%= form.submit :class => 'btn btn-primary' %>
+      <%= form.submit route.new_record? ? "Crear Ruta" :"Actualizar Ruta", :class => 'btn btn-primary' %>
     </div>
 <% end %>

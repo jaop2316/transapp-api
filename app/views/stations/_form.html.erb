@@ -37,6 +37,6 @@
     </div>
 
   <div class="actions">
-    <%= form.submit :class => 'btn btn-primary'%>
+    <%= form.submit station.new_record? ? "Crear Parada" :"Actualizar Parada", :class => 'btn btn-primary'%>
   </div>
 <% end %>

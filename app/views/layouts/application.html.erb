@@ -10,6 +10,7 @@
 
 <body class="container-fluid">
 <header class="header clearfix">
+  <div class= "col-md-12">
   <a class="navbar-brand" href="<%= root_path %>">
     <img class="img-responsive" src="/logoplanet.png" alt="">
   </a>
@@ -26,16 +27,22 @@
       </li>
       <li class="nav-item">
         <% if user_signed_in? %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
         <% else %>
-            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+            <%= link_to "Iniciar Sesión", new_user_session_path, :class => 'navbar-link'  %>
         <% end %>
       </li>
     </ul>
   </nav>
+  </div>
+
+  <div class="col-md-12 sign-messages">
+    <% if user_signed_in? %>
+        <p>Sesión iniciada como administrador</strong>.</p>
+    <% end %>
+  </div>
 
 </header>
-
 <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
 <% end %>

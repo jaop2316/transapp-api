@@ -27,6 +27,6 @@
     </div>
 
   <div class="actions">
-    <%= form.submit :class => 'btn btn-primary'%>
+    <%= form.submit place.new_record? ? "Crear Sitio de Interes" :"Actualizar Sitio de Interes" ,:class => 'btn btn-primary'%>
   </div>
 <% end %>
