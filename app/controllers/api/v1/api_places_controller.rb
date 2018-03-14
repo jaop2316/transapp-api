@@ -12,7 +12,7 @@ class Api::V1::ApiPlacesController < ApplicationController
       @place = Array.new()
       places.each do |place|
         @placesXroutes= Placeroute.select(:name).joins(:route).where(place_id: place.id)
-        @place.push({nombreSitio:place.name ,rutas:@placesXroutes.map{ |c| c.name}} )
+        @place.push({nombreSitio:place.name ,url: place.placeurl ,rutas:@placesXroutes.map{ |c| c.name}} )
       end
       @result.push(nombreCategoria:@category_name.name,id:category ,items:@place)
     end

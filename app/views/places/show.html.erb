@@ -8,6 +8,13 @@
       </h1>
       <fieldset>
         <legend>Información General</legend>
+
+        <div class ="iframe-place">
+          <iframe
+          src="<%= @place.placeurl %>"
+          width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
         <p>
           <strong>Categoria:</strong>
           <%= @place.category.name %>
